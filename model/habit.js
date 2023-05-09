@@ -1,33 +1,26 @@
 const mongoose = require("mongoose");
 
-// Schema for Habit
-const HabitSchema = new mongoose.Schema(
+// Schema for habit
+const habitSchema = new mongoose.Schema(
   {
+    user: {
+      type: String,
+      required: true,
+    },
     habit_name: {
       type: String,
       required: true,
     },
-    userRef: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-    },
-    dates: [
-      {
-        date: String,
-        complete: String,
-      },
-    ],
-    fav: {
-      type: Boolean,
-      default: false,
+    record_tracker: {
+      type: Map,
     },
   },
   {
-    timestamps: true,
+    timestamp: true,
   }
 );
 
-// Creating a model/collection for habit schema
-const Habit = mongoose.model("Habit", HabitSchema);
+// creating a model for habit schema
+const Habit = mongoose.model("Habit", habitSchema);
 
 module.exports = Habit;

@@ -1,11 +1,39 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>tha eakhd kdajsh</h1>
-  </body>
-</html>
+<!-- Importing stylesheet -->
+<link rel="stylesheet" href="./css/home.css" />
+<!-- Form For Taking Habit List -->
+<div>
+  <!-- Form for adding a new habit -->
+  <form class="habit-form" action="/add-habit" method="POST">
+    <!-- Input field for entering the habit name -->
+    <input
+      type="text"
+      name="habitName"
+      class="habit-details-input"
+      placeholder="Enter Habit You Want To Create"
+      required
+    />
+    <!-- Button to submit the form and add the habit -->
+    <button class="button" type="submit"><i class="fas fa-plus"></i></button>
+  </form>
+</div>
+<!-- Rendering habits -->
+<div class="render-habits">
+  <!-- Unordered list for displaying the habit items -->
+  <ul class="habit-list">
+    <% for (const habit of habitList){ %>
+    <!-- Each habit item with click functionality -->
+    <li onclick="location.href='/view-habit/?id=<%=habit._id%>'">
+      <!-- Habit name with a smiley icon -->
+      <div class="habit">
+        <i class="fas fa-smile-beam"></i> <%=habit.habitName%>
+      </div>
+      <!-- Delete button for removing the habit -->
+      <div class="delete">
+        <a href="/delete-habit/?id=<%=habit._id%>">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+    </li>
+    <% } %>
+  </ul>
+</div>

@@ -1,0 +1,64 @@
+/* Styling Form */
+.habit-form {
+  display: flex;
+}
+
+.habit-form input {
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  padding-left: 0.4rem;
+  width: 25rem;
+  border-radius: 25px;
+  border: none;
+}
+
+/* button */
+.habit-form .button {
+  margin-left: 0.5rem;
+  height: 100%;
+  width: 2.7rem;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 0.2rem;
+  border: none;
+}
+
+.habit-form .fa-plus {
+  position: relative;
+  color: rgba(24, 22, 22, 0.925);
+}
+
+/* List to display */
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  padding: 0px 0px;
+}
+
+.habit-list li {
+  list-style: none;
+  font-size: 2rem;
+  justify-content: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(236, 232, 232, 0.363);
+  cursor: pointer;
+  width: 100%;
+  display: inline-flex;
+  flex-flow: initial;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.habit-list li div {
+  display: inline;
+}
+
+.habit-list li .delete {
+  flex: 15;
+}
+
+.habit-list li .fas {
+  position: inherit;
+}
