@@ -1,10 +1,14 @@
 const express = require("express");
+const moment = require("moment");
+
 const path = require("path");
 const expressLayout = require("express-ejs-layouts");
 const ejs = require("ejs");
 const db = require("./config/mongoose");
 
 const app = express();
+
+moment().format();
 
 app.use(express.static("./assets"));
 app.use(express.urlencoded());
