@@ -1,6 +1,6 @@
 // Import required modules
 const express = require("express"); // Express framework for web application
-const moment = require("moment"); // Library for working with dates and times
+const port = process.env.PORT || 8000;
 
 const path = require("path"); // Built-in Node.js module for working with file paths
 const expressLayout = require("express-ejs-layouts"); // Middleware for using EJS layouts
@@ -11,7 +11,7 @@ const db = require("./config/mongoose"); // Custom module for connecting to Mong
 const app = express();
 
 // Set up moment.js for date formatting
-moment().format();
+
 
 // Serve static files from the "assets" directory
 app.use(express.static("./assets"));
