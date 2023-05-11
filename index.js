@@ -37,6 +37,6 @@ app.use("/", require("./routes/index")); // Use the index route for the root URL
 // app.get("/", require("./routes")); // Alternative syntax for specifying the root route
 
 // Start the server and listen on port 8000
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log("server is running at port: 8000");
 });
