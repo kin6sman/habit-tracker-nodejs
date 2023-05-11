@@ -62,3 +62,49 @@
 .habit-list li .fas {
   position: inherit;
 }
+
+#symbol {
+  margin-top: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+#weekly-view__btn,
+#weekly-view__btn-2 {
+  padding: 5px 7px;
+  margin-right: 3px;
+  background-color: #f44336;
+  color: #fff;
+  border: 1.5px solid rgb(2, 2, 75);
+  font-size: 15px;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+}
+#weekly-view__btn:hover,
+#weekly-view__btn-2:hover {
+  background-color: #ff1100;
+}
+#weekly-view__btn-2 {
+  border-radius: 15px 0 0 15px;
+}
+
+.fas {
+  font-size: 30px;
+}
+.fa-star,
+.fa-trash {
+  font-size: 25px;
+}
+.fa-check-circle {
+  color: green;
+}
+.fa-times-circle {
+  color: red;
+}
+.fa-minus-circle {
+  color: gold;
+}

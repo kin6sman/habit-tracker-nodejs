@@ -16,17 +16,42 @@
     <button class="button" type="submit"><i class="fas fa-plus"></i></button>
   </form>
 </div>
+
+<div id="symbol">
+  <button id="weekly-view__btn-2" onclick="showDailyData()">Daily</button>
+  <button id="weekly-view__btn" onclick="showWeeklyData()">weekly</button>
+</div>
+
 <!-- Rendering habits -->
 <div class="render-habits">
   <!-- Unordered list for displaying the habit items -->
   <ul class="habit-list">
-    <% for (const habit of habitList){ %>
+    <% for (const habit of habits){ %>
     <!-- Each habit item with click functionality -->
     <li onclick="location.href='/view-habit/?id=<%=habit._id%>'">
       <!-- Habit name with a smiley icon -->
       <div class="habit">
         <i class="fas fa-smile-beam"></i> <%=habit.habitName%>
       </div>
+      <%let currentDate = new Date(); let dd = currentDate.getDate(); let mm =
+        currentDate.getMonth() + 1; const yyyy = currentDate.getFullYear(); if
+        (dd < 10) dd = '0' + dd; if (mm < 10) mm = '0' + mm; let today = dd +
+        '/' + mm + '/' + yyyy; let found; let status;
+        habit.dates.find(function(item){ if(item.date === today) { found =
+        true; status = item.complete; } }); %>
+
+      <a
+          href="/update-db-date/?id=<%= habit._id %>&date=<%= today %>"
+          class="status"
+        >
+          <% if(found && status==='yes'){ %>
+          <i class="fas fa-check-circle"></i>
+          <% } else if(found && status==='no'){ %>
+          <i class="fas fa-times-circle"></i>
+          <% } else { %>
+          <i class="fas fa-minus-circle"></i>
+          <% } %>
+
       <!-- Delete button for removing the habit -->
       <div class="delete">
         <a href="/delete-habit/?id=<%=habit._id%>">

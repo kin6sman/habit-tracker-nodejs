@@ -7,13 +7,19 @@ const habitSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    habit_name: {
+    habitName: {
       type: String,
       required: true,
     },
     record_tracker: {
       type: Map,
     },
+    dates: [
+      {
+        date: String,
+        complete: String,
+      },
+    ],
   },
   {
     timestamp: true,
